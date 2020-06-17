@@ -8,6 +8,7 @@ public class Area {
         double radius;
         double area;
         System.out.println("Enter a radius:");
+
         radius = 0;
         boolean error = false;
         try {
@@ -18,6 +19,7 @@ public class Area {
         }
 
         input.close();
+
         if (error == false) {
             if (radius < 0) {
                 System.out.println("Radius value is incorrect.");
