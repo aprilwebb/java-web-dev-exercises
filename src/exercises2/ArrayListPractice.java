@@ -16,13 +16,22 @@ public class ArrayListPractice {
         ArrayList<String> words = new ArrayList<>();
         Scanner wordInput = new Scanner(System.in);
 //        System.out.println("Enter a list of words: ");
+        words.add("Mommy");
+        words.add("Daddy");
+        words.add("Ham");
+        words.add("Gel");
+        words.add("Organic");
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Enter a word: ");
-            String newWord = wordInput.nextLine();
-            if (!newWord.equals("")) ;
-            words.add(newWord);
-        }
+        System.out.print("Enter a word length: ");
+
+//        for (int i = 0; i < words.size(); i++) {
+//            if(wordInput.hasNextInt()){
+//                Word.getWord(words);
+//            }
+////            String newWord = wordInput.nextLine();
+////            if (!newWord.equals("") || wordInput.hasNextInt()) ;
+////            words.add(newWord);
+//        }
         Word.getWord(words);
     }
 }
