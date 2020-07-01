@@ -1,4 +1,4 @@
-package exercises2;
+package exercises.class2;
 
 import java.util.HashMap;
 import java.util.Scanner;

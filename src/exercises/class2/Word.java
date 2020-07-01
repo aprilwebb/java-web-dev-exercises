@@ -1,4 +1,4 @@
-package exercises2;
+package exercises.class2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,10 +8,12 @@ public class Word {
         Scanner input = new Scanner(System.in);
         int search = input.nextInt();
 
-        for (String word : words) {
-            if(word.length() == search)
-                System.out.println(word);
+            for (String word : words) {
+                if (word.length() == search) {
+                    System.out.println(word);
             }
         }
     }
+}
+
 
