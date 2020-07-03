@@ -30,20 +30,50 @@ public class Student {
 
 
      //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
+    public String getGradeLevel() {
 //        // Determine the grade level of the student based on numberOfCredits
-//    }
+        if (numberOfCredits > 0 && numberOfCredits <= 29) {
+            return "Freshman";
+        } else if (numberOfCredits >= 30 && numberOfCredits <= 59) {
+            return "Sophomore";
+        } else if (numberOfCredits >= 60 && numberOfCredits <= 89) {
+            return "Junior";
+        } else {
+            return "Senior";
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+        double currentTotalQualityScore = gpa * numberOfCredits;
+        double newTotalQualityScore = currentTotalQualityScore + grade * courseCredits;
+        numberOfCredits += courseCredits;
+        gpa = newTotalQualityScore / numberOfCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
-
+    @Override
+    public String toString() {
+        return "\n*** Student Info ***" +
+                "\nName: '" + name + '\'' +
+                "\nStudent Id: " + studentId +
+                "\nNumber Of Credits: " + numberOfCredits +
+                "\nGPA: " + gpa;
+    }
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof org.launchcode.java.demos.lsn3classes1.Student)) return false;
+        org.launchcode.java.demos.lsn3classes1.Student student = (org.launchcode.java.demos.lsn3classes1.Student) o;
+        return getStudentId() == student.getStudentId() &&
+                getNumberOfCredits() == student.getNumberOfCredits() &&
+                Double.compare(student.getGpa(), getGpa()) == 0 &&
+                getName().equals(student.getName());
+    }
 
     public String getName() {
         return name;
@@ -79,11 +109,21 @@ public class Student {
 
     public static void main(String[] args) {
         Student sally = new Student("Sally",1,1,4.0);
+        Student michael = new Student("Michael", 2, 48, 3.0);
+        Student cory = new Student("Cory", 3, 18, 3.8);
+        Teacher teacher = new Teacher("Jane", "Cordero", "Spanish", 7);
+
+//        Course course = new Course("Spanish", "Jane", ArrayList<Student> enrolledStudents);
+
         System.out.println("The Student class works! " + sally.getName() + " is a student!");
         System.out.println(sally);
+        System.out.println(sally.getGradeLevel());
         sally.addGrade(12, 3.5);
         System.out.println(sally);
+        System.out.println(sally.getGradeLevel());
         sally.addGrade(25, 3.8);
-        System.out.println(sally);
+        System.out.println(michael);
+        System.out.println(michael.getGradeLevel());
+
     }
 }
