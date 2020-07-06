@@ -39,8 +39,8 @@ public class Computer {
         return "Data processed";
     }
 
-    public static String save(){
-        return "Save successful";
+    public static String save(String fileName){
+        return fileName + " saved successfully.";
     }
 
     public static String powerOn(){
