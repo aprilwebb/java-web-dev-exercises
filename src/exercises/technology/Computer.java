@@ -1,11 +1,12 @@
 package exercises.technology;
 
-public class Computer {
+public class Computer extends AbstractEntity{
     private String brand;
     private double displaySize;
     private double memoryGb;
 
     public Computer(String brand, double displaySize, double memoryGb) {
+        super();
         this.brand = brand;
         this.displaySize = displaySize;
         this.memoryGb = memoryGb;
